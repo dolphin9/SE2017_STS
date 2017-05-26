@@ -2,20 +2,28 @@
 <html lang="zh-CN">
 
 <meta charset="utf-8">
-<head>
-  register test
-</head>
+<head>用户注册</head>
 <body>
-<form action="register.php" method="post">
-    昵称:<input type="text" name="usrname"><br>
-    密码:<input type="text" name="pwd"><br>
-    姓名:<input type="text" name="name"><br>
-    电邮:<input type="text" name="email"><br>
-    电话:<input type="text" name="phone"><br>
-    身份证:<input type="text" name="idnum"><br>
-    性别:<input type="radio" name="sex" value="male" checked>Male<input type="radio" name="sex" value="female">Female<br>
-    证券ID:<input type="text" name="accountname"><br>
-    家庭住址:<input type="text" name="fmaddr"><br>
+<form name="RegisterForm" action="register.php" method="post">
+    <label>昵称:</label>
+    <input type="text" name="usrname" class="input" /><br>
+    <label>密码:</label>
+    <input type="text" name="pwd" class="input"><br>
+    <label>姓名:</label>
+    <input type="text" name="name" class="input"><br>
+    <label>电邮:</label>
+    <input type="text" name="email" class="input"><br>
+    <label>电话:</label>
+    <input type="text" name="phone" class="input"><br>
+    <label>身份证:</label>
+    <input type="text" name="idnum" class="input"><br>
+    <label>性别:</label>
+    <input type="radio" name="sex" value="male" checked>Male
+    <input type="radio" name="sex" value="female">Female<br>
+    <label>证券ID:</label>
+    <input type="text" name="accountname" class="input"><br>
+    <label>家庭住址:</label>
+    <input type="text" name="fmaddr" class="input"><br>
 
     <input type="submit">
 </form>
