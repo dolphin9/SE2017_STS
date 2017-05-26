@@ -1,5 +1,5 @@
 <?php
-
+require_once("connect.php");
 //error_reporting(0);
 
 
