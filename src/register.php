@@ -5,15 +5,15 @@ $usrname = $pwd = $idnum = "";
 $name = $email = $phone = "";
 $sex = $accountname = $fmaddr = "";
 
-$usrname = $_POST['usrname'];
-$pwd = $_POST['pwd'];
-$name = $_POST['name'];
-$email = $_POST['email'];
-$phone = $_POST['phone'];
-$idnum = $_POST['idnum'];
-$sex = $_POST['sex'];
-$accountname = $_POST['accountname'];
-$fmaddr = $_POST['fmaddr'];
+$usrname = htmlspecialchars($_POST['usrname']);
+$pwd = MD5($_POST['pwd']);
+$name = htmlspecialchars($_POST['name']);
+$email = htmlspecialchars($_POST['email']);
+$phone = htmlspecialchars($_POST['phone']);
+$idnum = htmlspecialchars($_POST['idnum']);
+$sex = htmlspecialchars($_POST['sex']);
+$accountname = htmlspecialchars($_POST['accountname']);
+$fmaddr = htmlspecialchars($_POST['fmaddr']);
 
 //$usrname = "Anne";
 //$pwd = "123456";
