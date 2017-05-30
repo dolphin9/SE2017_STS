@@ -9,10 +9,10 @@ header('Access-Control-Allow-Headers:x-requested-with,content-type');
 
 $abc = $def = $a = $b = $c = "";
 
-$a =$_GET['abc'];
-$b =$_GET['def'];
+$a =$_POST['abc'];
+$b =$_POST['def'];
 
-echo var_dump($_GET);
+echo var_dump($_POST);
 echo "<br>";
 
 echo "a=$a"."<br>";
