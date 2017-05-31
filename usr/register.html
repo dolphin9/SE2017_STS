@@ -9,6 +9,8 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
+
 </head>
 <body>
 
@@ -29,6 +31,7 @@
   <!---注册表单---->
 
 <p>
+  <div class="container">
   <div class="row s4">
     <form class="col s10 offset-s1" method="post" action="register.php">
       <div class="row">
@@ -39,14 +42,14 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" name="pwd" class="validate">
-          <label for="password">密码</label>
+          <input id="pwd" type="password" name="pwd" class="validate">
+          <label for="pwd">密码</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="pwd2" type="password" name="pwd1" class="validate">
-          <label for="pwd2">再次输入</label>
+          <input id="pwd1" type="password" name="pwd1" class="validate">
+          <label for="pwd1">再次输入</label>
         </div>
       </div>
       <div class="row">
@@ -92,6 +95,7 @@
       </div>
     </form>
   </div>
+</div>
 </p>
 <footer class="page-footer blue">
   <div class="container">

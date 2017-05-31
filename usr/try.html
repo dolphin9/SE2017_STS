@@ -1,0 +1,26 @@
+<html>
+<head>
+<!--
+<script type="text/javascript" src="/js/jquery-3.2.1.js"></script>-->
+<script src="autoload.js" id="autoload" js="1,2,3" css="1"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+$("button").click(function(){
+$("p").hide();
+});
+});
+</script>
+</head>
+
+<body>
+<h2>This is a heading</h2>
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+<button type="button">Click me</button>
+<div id="myfooter"></div>
+</body>
+</html>
+<script>
+$("#myfooter").load("../myfooter.html")
+</script>
