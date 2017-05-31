@@ -9,21 +9,38 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <ul id="slide-out" class="side-nav">
+      <li><div class="userView">
+        <div class="background">
+          <img src="images/office.jpg">
+        </div>
+        <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
+        <a href="#!name"><span class="white-text name">张三</span></a>
+        <a href="#!email"><span class="white-text email">jdandturk@sina.com</span></a>
+      </div></li>
+      <li><a href="#!"><i class="material-icons">cloud</i>带图标的第一链接</a></li>
+      <li><a href="#!">第二链接</a></li>
+      <li><div class="divider"></div></li>
+      <li><a class="subheader">子标题</a></li>
+      <li><a class="waves-effect" href="#!">带波纹效果的第三链接</a></li>
+    </ul>
+
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><b>B组的股票交易系统<b></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+        <li><a  href="\src\register_test.html">register</a></li>
+        <li><a  href="\src\register_test.html">register</a></li>
+        <li><a  href="\src\login_test.html">login_test</a></li>
+        <li><a  data-activates="slide-out">menu</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
 </head>
 	<body>
-<nav class="light-blue lighten-1" role="navigation">
-  <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><b>B组的股票交易系统<b></a>
-    <ul class="right hide-on-med-and-down">
-      <li><a href="#">Navbar Link</a></li>
-      <li><a  href="\src\register_test.html">register</a></li>
-      <li><a  href="\src\register_test.html">register</a></li>
-      <li><a  href="\src\login_test.html">login_test</a></li>
-      <li><a  href="\src\try.html">try</a></li>
-    </ul>
-    
-    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-  </div>
-</nav>
+
 <div class="section no-pad-bot" id="index-banner">
   <div class="container">
     <br><br>
@@ -39,13 +56,13 @@
   </div>
 </div>
 
-
 <div class="container">
   <div class="section">
 
     <!--   Icon Section   -->
+<a href="usr/login.html">
     <div class="row">
-      <div class="col s12 m4">
+      <div class="col s12 m4 z-depth-2">
         <div class="icon-block">
           <h2 class="center light-blue-text"><i class="material-icons">perm_identity</i></h2>
           <h5 class="center">登录账户</h5>
@@ -53,7 +70,8 @@
           <p class="center light">已经有一个账户，立即登录！</p>
         </div>
       </div>
-
+<a>
+<a href="../B5/index.html">
       <div class="col s12 m4">
         <div class="icon-block">
           <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
@@ -62,7 +80,8 @@
           <p class="center light">瞧一瞧，看一看 (0.0)</p>
         </div>
       </div>
-
+</a>
+<a href="../B1/index.html">
       <div class="col s12 m4">
         <div class="icon-block">
           <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
@@ -72,6 +91,7 @@
         </div>
       </div>
     </div>
+<a>
 
   </div>
   <br><br>
@@ -119,10 +139,11 @@
 
 
 <!--  Scripts-->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
 <script src="js/materialize.js"></script>
 <script src="js/init.js"></script>
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
 
 
 </body>
