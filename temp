@@ -1,0 +1,106 @@
+<div class="row">
+  <div class="input-field col s12">
+    <input id="phone" type="text" name="phone" class="validate">
+    <label for="phone">手机号</label>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field col s12">
+    <input id="email" type="email" name="row" class="validate">
+    <label for="email">邮件</label>
+  </div>
+</div>
+<div class="row">
+  <div class="col s4">
+    <lable for="sex">性别</lable>
+  </div>
+  <div class="col s4">
+    <input name="sex" type="radio" value="female" id="test1" />
+    <label for="test1">男</label>
+  </div>
+  <div class="col s4 ">
+    <input name="sex" type="radio" value="female" id="test2" />
+    <label for="test2">女</label>
+  </div>
+  </div>
+  <div class="row ">
+    <div class="input-field col s5">
+      <input id="idnum" type="text" name="idnum" nameclass="validate">
+      <label for="idnum">身份证</label>
+    </div>
+    <div class="input-field col s6 offset-s1">
+      <input id="accountname" type="text" name="accountname" nameclass="validate">
+      <label for="accountname">证券账户</label>
+    </div>
+  </div>
+  $('#signup-form').materialid({
+    fields: {
+      usrname: {
+        validators: {
+          notEmpty: {
+            msg: '用户名不能为空'
+          }
+        }
+      },
+      pwd: {
+        validators: {
+          notEmpty: {
+            msg: '密码不能为空'
+          }
+        }
+      },
+      pwd1: {
+        validators: {
+          notEmpty: {
+            msg: '请再输入一次密码'
+          }
+        }
+      },
+      accountname: {
+        validators: {
+          notEmpty: {
+            msg: '证券账户不能为空'
+          }
+        }
+      },
+      phone: {
+        validators: {
+          notEmpty: {
+            msg: '电话号码不能为空'
+          },
+          regexp: {
+            pattern: /((\d{11})|^((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1}))$)/,
+            msg: '不是有效的电话号码'
+          }
+        }
+      },
+      email: {
+        validators: {
+          notEmpty: {
+            msg: '邮箱地址不能为空'
+          },
+          regexp: {
+            pattern: /^([\w-_]+(?:\.[\w-_]+)*)@((?:[a-z0-9]+(?:-[a-zA-Z0-9]+)*)+\.[a-z]{2,6})$/i,
+            msg: '不是有效的邮箱'
+          }
+        }
+      },
+      idnum: {
+        validators: {
+          notEmpty: {
+            msg: '身份证不能为空'
+          },
+          regexp: {
+            pattern: /^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{4}$/,
+            msg: '不是有效的身份证号'
+          }
+        }
+      }
+    },
+    config: {
+      callback_error: function(field,msg)
+        {
+            console.log("Error Callback fired for #"+field.attr("id")+" msg:"+msg)
+        }
+    }
+  });

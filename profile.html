@@ -28,20 +28,21 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="pwd" name="pwd" type="password" name="pwd" class="validate">
-          <label for="pwd">密码</label>
+          <input id="phone" type="text" name="phone" class="validate">
+          <label for="phone">手机号</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="pwd1" name="pwd1" type="password" name="pwd1" class="validate">
-          <label for="pwd1">再次输入</label>
+          <input id="email" type="email" name="row" class="validate">
+          <label for="email">邮件</label>
         </div>
       </div>
-        <div id="termandprivacy"></div>
-        <button class="btn waves-effect waves-light" type="submit" name="submit">提交
-          <i class="material-icons right">send</i>
-        </button>
+          <div class="input-field col s6 offset-s1">
+            <input id="accountname" type="text" name="accountname" nameclass="validate">
+            <label for="accountname">证券账户</label>
+          </div>
+        </div>
       </div>
 </div>
 <div id="myfooter"></div>
@@ -55,8 +56,5 @@
 $("#myfooter").load("/html/myfooter.html")
 $("#mysidebar").load("/html/mysidebar.html")
 $("#mynavbar").load("/html/mynavbar.html")
-$(document).ready(function(){
-$("#termandprivacy").load("/html/termandprivacy.html")
-});
 
 </script>
