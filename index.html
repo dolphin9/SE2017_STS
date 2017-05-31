@@ -8,69 +8,8 @@
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="autoload.js" id="autoload" js="1,2,3" css="1"></script>
-
-  <script type="text/javascript">
-  $(document).ready(function(){
-  $("a").click(function(){
-    $('.button-collapse').sideNav({
-      menuWidth: 200, // Default is 300
-      edge: 'left', // Choose the horizontal origin
-      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
-      draggable: false // Choose whether you can drag to open on touch screens
-    }
-  );
-  });
-  });
-  </script>
-
-  <div class="fixed-action-btn">
-    <a href="#" data-activates="slide-out" class="btn button-collapse">
-      侧边导航示例
-    </a>
-  </div>
-
-  <ul id="dropdown1" class="dropdown-content">
-    <li><a href="#!">一</a></li>
-    <li><a href="#!">二</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">三</a></li>
-  </ul>
-
-<nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">
-        <b>B组的股票交易系统<b>
-      </a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
-        <li><a  href="\src\register_test.html">register</a></li>
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">下拉<i class="material-icons right">arrow_drop_down</i></a></li>
-        <li><a class="button-collapse" href="#!" data-activates="slide-out" >menu</a></li>
-
-      </ul>
-    </div>
-    <div>
-
-  </div>
-</nav>
-
-<ul id="slide-out" class="side-nav">
-  <li><div class="userView">
-    <div class="background">
-      <img src="images/office.jpg">
-    </div>
-    <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
-    <a href="#!name"><span class="white-text name">张三</span></a>
-    <a href="#!email"><span class="white-text email">jdandturk@sina.com</span></a>
-  </div></li>
-  <li><a href="#!"><i class="material-icons">cloud</i>带图标的第一链接</a></li>
-  <li><a href="#!">第二链接</a></li>
-  <li><div class="divider"></div></li>
-  <li><a class="subheader">子标题</a></li>
-  <li><a class="waves-effect" href="#!">带波纹效果的第三链接</a></li>
-</ul>
-
-
+  <b id="mysidebar"></b>
+  <b id="mynavbar"></b>
 
 </head>
 	<body>
@@ -83,7 +22,7 @@
       <h5 class="header col s12 light">一个崭新的（刚刚做好的）股票交易系统</h5>
     </div>
     <div class="row center">
-      <a href="/usr/register.html" id="register-button" class="btn-large waves-effect waves-light blue">立即注册</a>
+      <a href="register.html" id="register-button" class="btn-large waves-effect waves-light blue">立即注册</a>
     </div>
     <br><br>
 
@@ -94,7 +33,7 @@
   <div class="section">
 
     <!--   Icon Section   -->
-<a href="usr/login.html">
+<a href="login.html">
     <div class="row">
       <div class="col s12 m4 z-depth-2">
         <div class="icon-block">
@@ -141,5 +80,7 @@
 
 </body>
 <script>
-$("#myfooter").load("myfooter.html")
+$("#myfooter").load("/html/myfooter.html")
+$("#mysidebar").load("/html/mysidebar.html")
+$("#mynavbar").load("/html/mynavbar.html")
 </script>
