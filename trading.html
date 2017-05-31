@@ -15,20 +15,18 @@
 <body>
 
  <div class="container">
-  <h1>股票交易</h1>
   <div class="row s4">
     <form class="col s10 offset-s1" name="signup-form" method="post" action="trading.php">
+        <h1>股票交易</h1>
       <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col s3">
           <select name="type">
             <option value="accept">发布</option>
-            <option value="cancel">取消</option>
+            <option value="cancel">撤消</option>
           </select>
           <label>操作类型</label>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col s4 offset-s1">
           <select name="type2">
             <option value="0">限价指令</option>
             <option value="1">最优五档剩余撤销</option>
@@ -36,9 +34,7 @@
           </select>
           <label>指令类型</label>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col s3 offset-s1">
           <select name="sell">
             <option value="0">买</option>
             <option value="1">卖</option>
