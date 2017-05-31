@@ -7,34 +7,19 @@
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="../css/materialid.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
+  <script src="autoload.js" id="autoload" js="1,2,3" css="1"></script>
+  <b id="mysidebar"></b>
+  <b id="mynavbar"></b>
 
 </head>
 <body>
-
-  <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><b>B组的股票交易系统<b></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
-        <li><a  href="\src\register_test.html">register</a></li>
-        <li><a  href="\src\register_test.html">register</a></li>
-        <li><a  href="\src\login_test.html">login_test</a></li>
-        <li><a  href="\src\try.html">try</a></li>
-      </ul>
-
-    </div>
-  </nav>
-
 
   <!---注册表单-->
 
 <p>
   <div class="container">
   <div class="row s4">
-    <form class="col s10 offset-s1" id="signup-form" name="signup-form" method="post" action="register.php">
+    <form class="col s10 offset-s1" id="signup-form" name="signup-form" method="post" action="php/register.php">
       <div class="row">
         <div class="input-field col s12">
           <input id="usrname" type="text" name="usrname" class="validate">
@@ -88,58 +73,23 @@
             <label for="accountname">证券账户</label>
           </div>
         </div>
+        <div id="termandprivacy"></div>
         <button class="btn waves-effect waves-light" type="submit" name="submit">提交
           <i class="material-icons right">send</i>
         </button>
       </div>
-
-      </div>
-    </form>
-  </div>
 </div>
-</p>
-<footer class="page-footer blue">
-  <div class="container">
-    <div class="row">
-      <div class="col l6 s12">
-        <h5 class="white-text">About B Group</h5>
-        <p class="grey-text text-lighten-4">组员名单blbl</p>
-
-
-      </div>
-      <div class="col l3 s12">
-        <h5 class="white-text">Settings</h5>
-        <ul>
-          <li><a class="white-text" href="#!">这里</a></li>
-          <li><a class="white-text" href="#!">不知道</a></li>
-          <li><a class="white-text" href="#!">写</a></li>
-          <li><a class="white-text" href="#!">什么</a></li>
-        </ul>
-      </div>
-      <div class="col l3 s12">
-        <h5 class="white-text">Connect</h5>
-        <ul>
-          <li><a class="white-text" href="#!">这里</a></li>
-          <li><a class="white-text" href="#!">也</a></li>
-          <li><a class="white-text" href="#!">不知道</a></li>
-          <li><a class="white-text" href="#!">写什么</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer-copyright">
-    <div class="container">
-    Made by <a class="blue-text text-lighten-3" href="http://materializecss.com">B Group</a>
-    </div>
-  </div>
-</footer>
-
-    <script src="../js/materialize.js"></script>
-    <script src='../js/materialid.min.js'></script>
-    <!--<script src="./app.js"></script>-->
+<div id="myfooter"></div>
 </body>
 </html>
 <script>
+
+$(document).ready(function(){
+$("#myfooter").load("/html/myfooter.html")
+$("#mysidebar").load("/html/mysidebar.html")
+$("#mynavbar").load("/html/mynavbar.html")
+$("#termandprivacy").load("/html/termandprivacy.html")
+});
   $('#signup-form').materialid({
     fields: {
       usrname: {
