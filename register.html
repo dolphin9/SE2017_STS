@@ -20,7 +20,7 @@
 <p>
   <div class="container">
   <div class="row s4">
-    <form class="col s10 offset-s1" method="post" action="register.php">
+    <form class="col s10 offset-s1" name="signup-form" method="post" action="register.php">
       <div class="row">
         <div class="input-field col s12">
           <input id="usrname" type="text" name="usrname" class="validate">
@@ -29,13 +29,13 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="pwd" type="password" name="pwd" class="validate">
+          <input id="pwd" name="pwd" type="password" name="pwd" class="validate">
           <label for="pwd">密码</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="pwd1" type="password" name="pwd1" class="validate">
+          <input id="pwd1" name="pwd-repeat" type="password" name="pwd1" class="validate">
           <label for="pwd1">再次输入</label>
         </div>
       </div>
@@ -95,9 +95,18 @@
 </body>
 </html>
 <script>
+<<<<<<< HEAD:register.html
 $("#myfooter").load("/html/myfooter.html")
 $("#mysidebar").load("/html/mysidebar.html")
 $("#mynavbar").load("/html/mynavbar.html")
 $("termandprivacy").load("/html/termandprivacy.html")
+=======
+  function validatePassword() {
+    var form = document.forms["signup-form"];
+    var pwd = form["pwd"].value;
+    var pwdRepeat = form["pwd-repeat"].value; 
+>>>>>>> 09d7cad0b37f860f022ce06f5a4d51c8b1c1a505:usr/register.html
 
+    return pwd === pwdRepeat;
+  }
 </script>
