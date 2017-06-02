@@ -15,12 +15,12 @@
 
     $usrname = htmlspecialchars($_POST['usrname']);
     $pwd = MD5($_POST['pwd']);
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $phone = htmlspecialchars($_POST['phone']);
-    $idnum = htmlspecialchars($_POST['idnum']);
-    $sex = htmlspecialchars($_POST['sex']);
-    $accountname = htmlspecialchars($_POST['accountname']);
+    $email = "12345678";
+//    $name = htmlspecialchars($_POST['name']);
+  //  $email = htmlspecialchars($_POST['email']);
+//    $phone = htmlspecialchars($_POST['phone']);
+//    $sex = htmlspecialchars($_POST['sex']);
+//    $accountname = htmlspecialchars($_POST['accountname']);
 
 
 

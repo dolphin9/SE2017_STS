@@ -9,7 +9,7 @@ header('Access-Control-Allow-Headers:x-requested-with,content-type');
 require_once("connect.php");
 
 $submit = "";
-$usrname = $pwd = $action = "";
+$usrname = $pwd = $action = $islogin = "";
 
 //Part3 用户登录部分
 
@@ -25,22 +25,23 @@ $con = connectMySQL('reader');
 mysql_select_db("stock" , $con);
 
 echo "username = $usrname"."<br>";
-echo "pwd = $pwd"."<br>";
-
+//echo "pwd = $pwd"."<br>";
 
 //检测用户名及密码是否正确
 //limit 1 限制只有一个结果
 $sql = "SELECT usrname from normalusr where usrname='$usrname' and pwd='$pwd' limit 1";
 $check_query = mysql_query($sql);
 
-echo "$check_query"."<br>";
+//echo "$check_query"."<br>";
 if($result = mysql_fetch_array($check_query)){
     //登录成功
     session_start();
     $_SESSION['username'] = $usrname;
     $_SESSION['userid'] = $result['userid'];
     $_SESSION['name'] = $result['name'];
+    $_SESSION['email']= $result['email'];
     $_SESSION['accountname'] = $result['accountname'];
+    $_SESSION['islogin'] = "true";
 
     echo $usrname,' 欢迎你！进入 <a href="my.php">用户中心</a><br />';
     echo '点击此处 <a href="logout.php?action=logout">注销</a> 登录！<br />';
