@@ -13,19 +13,52 @@
 </head>
 
 <body>
+<div class="container">
+  <div class="row">
+    <div class="input-field col s3">
+      <select name="type">
+        <option value="accept">发布</option>
+        <option value="cancel">撤消</option>
+      </select>
+      <label>操作类型</label>
+    </div>
+    <div class="input-field col s4 offset-s1">
+      <select name="type2">
+        <option value="0">限价指令</option>
+        <option value="1">最优五档剩余撤销</option>
+        <option value="2">最优五档剩余限价</option>
+      </select>
+      <label>指令类型</label>
+    </div>
+    <div class="input-field col s3 offset-s1">
+      <select name="sell">
+        <option value="0">买</option>
+        <option value="1">卖</option>
+      </select>
+      <label>买卖类型</label>
+    </div>
+  </div>
 
 
-
-
-
-
-
+   <div class="row">
+     <form class="col s12">
+       <div class="row">
+         <div class="input-field col s6">
+           <i class="material-icons prefix">mode_edit</i>
+           <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+           <label for="icon_prefix2">信息</label>
+         </div>
+       </div>
+     </form>
+   </div>
 
 
   <div id="myfooter"></div>
 </body>
 <script>
+$(document).ready(function(){
 $("#myfooter").load("/html/myfooter.html")
 $("#mysidebar").load("/html/mysidebar.html")
 $("#mynavbar").load("/html/mynavbar.html")
+});
 </script>

@@ -1,5 +1,5 @@
 <?php
- if(!empty(_SESSION[usrname])){
+ if(!empty(_SESSION["usrname"])){
    echo "true";
  }
  else {

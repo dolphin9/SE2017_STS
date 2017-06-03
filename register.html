@@ -20,17 +20,6 @@
 <p>
   <div class="container">
     <div class="row">
-        <div class="col s12 m7">
-          <div class="card">
-            <div class="card-image">
-              <img src="images/boy-1.png">
-              <span class="card-title">选择头像</span>
-            </div>
-            <div class="card-content">
-              <p>在这里可以选择头像</p>
-            </div>
-          </div>
-        </div>
         <div class="col s12 m5">
           <div calss="row s6 m1">
             <h2>用户注册<h2>
@@ -49,9 +38,16 @@
               </div>
             </div>
             <div class="row">
-              <div class="input-field col s12">
-                <input id="pwd1" name="pwd1" type="password" name="pwd1" class="validate">
-                <label for="pwd1">再次输入</label>
+              <div class="col s4">
+                <lable for="sex">性别</lable>
+              </div>
+              <div class="col s4">
+                <input name="sex" type="radio" value="female" id="test1" />
+                <label for="test1">男</label>
+              </div>
+              <div class="col s4 ">
+                <input name="sex" type="radio" value="female" id="test2" />
+                <label for="test2">女</label>
               </div>
             </div>
             <div class="row">
@@ -84,6 +80,10 @@ $("#myfooter").load("/html/myfooter.html")
 $("#mysidebar").load("/html/mysidebar.html")
 $("#mynavbar").load("/html/mynavbar.html")
 $("#termandprivacy").load("/html/termandprivacy.html")
+
+
+
+
 });
 
 </script>

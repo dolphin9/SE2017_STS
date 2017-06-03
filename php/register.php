@@ -16,6 +16,7 @@
     $usrname = htmlspecialchars($_POST['usrname']);
     $pwd = MD5($_POST['pwd']);
     $email =  htmlspecialchars($_POST['email']);
+    $sex = htmlspecialchars($_POST['sex']);
 //    $name = htmlspecialchars($_POST['name']);
   //  $email = htmlspecialchars($_POST['email']);
 //    $phone = htmlspecialchars($_POST['phone']);
@@ -30,17 +31,22 @@
     function usrregister($usrname,$pwd,$email){
       $con = connectMySQL('writer');
       mysql_select_db("stock" , $con);
-      $sql = "INSERT INTO normalusr (usrname,pwd,email)
+      $sql = "INSERT INTO normalusr (usrname,pwd,sex,email)
       VALUES
-      ( '$usrname' , '$pwd' ,  '$email' )
+      ( '$usrname' , '$pwd' , '$sex', '$email' )
       ";
       if(!mysql_query($sql,$con))
       {
-        die('Error: ' . mysql_error());
+        $state = 2;
+        echo $state;
       }
-      echo "register ok!";
-      mysql_close($con);
-      header("Location:/profile.html");
+      else{
+        $state = 0;
+        mysql_close($con);
+        header("Location:/profile.html");
+        echo $state;
+      }
+
     }
 
     usrregister($usrname,$pwd,$email);
