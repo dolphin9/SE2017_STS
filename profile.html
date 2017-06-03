@@ -17,14 +17,20 @@
   <!---注册表单-->
 
 <p>
-  <div class="container">
-  <h2>更改个人信息<h2>
+<div class="container">
+  <h2>完善个人信息<h2>
   <div class="row s4">
     <form class="col s10 offset-s1" id="signup-form" name="signup-form" method="post" action="php/register.php">
       <div class="row">
         <div class="input-field col s12">
           <input id="usrname" type="text" name="usrname" class="validate">
-          <label for="usrname">用户名</label>
+          <label for="usrname">姓名</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="idnum" type="text" name="idnum" class="validate">
+          <label for="idnum">身份证</label>
         </div>
       </div>
       <div class="row">
@@ -34,17 +40,31 @@
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" name="row" class="validate">
-          <label for="email">邮件</label>
-        </div>
-      </div>
           <div class="input-field col s6 offset-s1">
             <input id="accountname" type="text" name="accountname" nameclass="validate">
             <label for="accountname">证券账户</label>
           </div>
+      </div>
+      <div class="row">
+        <div class="col s4">
+          <lable for="sex">性别</lable>
+        </div>
+        <div class="col s4">
+          <input name="sex" type="radio" value="female" id="test1" />
+          <label for="test1">男</label>
+        </div>
+        <div class="col s4 ">
+          <input name="sex" type="radio" value="female" id="test2" />
+          <label for="test2">女</label>
         </div>
       </div>
+      <div class="row">
+          <div class="input-field col s6 offset-s1">
+            <input id="accountname" type="text" name="accountname" nameclass="validate">
+            <label for="accountname">证券账户</label>
+          </div>
+      </div>
+    </div>
 </div>
 <div id="myfooter"></div>
 </body>

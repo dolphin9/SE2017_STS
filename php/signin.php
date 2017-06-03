@@ -45,7 +45,7 @@ if($result = mysql_fetch_array($check_query)){
 
     echo $usrname,' 欢迎你！进入 <a href="my.php">用户中心</a><br />';
     echo '点击此处 <a href="logout.php?action=logout">注销</a> 登录！<br />';
-    header("Location: ../index.html");
+    header("Location: ../profile.html");
     exit;
 } else {
     exit('登录失败！点击此处 <a href="javascript:history.back(-1);">返回</a> 重试');

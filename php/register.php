@@ -15,7 +15,7 @@
 
     $usrname = htmlspecialchars($_POST['usrname']);
     $pwd = MD5($_POST['pwd']);
-    $email = "12345678";
+    $email =  htmlspecialchars($_POST['email']);
 //    $name = htmlspecialchars($_POST['name']);
   //  $email = htmlspecialchars($_POST['email']);
 //    $phone = htmlspecialchars($_POST['phone']);
@@ -27,12 +27,12 @@
     //Part2 insert 连接数据库并向数据库中插入值， 这里为注册操作
     //      此处使用的user为writer，database为stock，table为nomalusr
     //      默认输入的信息都是合法的。
-    function usrregister($usrname,$pwd,$name,$email,$phone,$sex,$idnum,$accountname){
+    function usrregister($usrname,$pwd,$email){
       $con = connectMySQL('writer');
       mysql_select_db("stock" , $con);
-      $sql = "INSERT INTO normalusr (usrname,pwd,email,phone,name,sex,idnum,  accountname)
+      $sql = "INSERT INTO normalusr (usrname,pwd,email)
       VALUES
-      ( '$usrname' , '$pwd' ,  '$email' , '$phone' ,'$name' , '$sex', '$idnum',    '$accountname'  )
+      ( '$usrname' , '$pwd' ,  '$email' )
       ";
       if(!mysql_query($sql,$con))
       {
@@ -40,11 +40,12 @@
       }
       echo "register ok!";
       mysql_close($con);
+      header("Location:/profile.html");
     }
 
-    usrregister($usrname,$pwd,$name,$email,$phone,$sex,$idnum,$accountname);
+    usrregister($usrname,$pwd,$email);
 
     ?>
-    <script language='javascript'>document.location = '../index.html''</script>
+
   </body>
 </html>
