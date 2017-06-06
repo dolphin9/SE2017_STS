@@ -21,12 +21,12 @@
 
  <div class="container">
   <div class="row s4">
-<<<<<<< HEAD
-    <form class="col s10 offset-s1" name="signup-form" method="post" action="trading.php">
+
+    <form class="col s10 offset-s1" name="signup-form" method="post" action="php/trading.php">
         <h1>股票交易</h1>
-=======
-    <form class="col s10 offset-s1" name="deal-form" id="deal-form" method="post" action="trading.php">
->>>>>>> 0a3bb62b97f98766b063496ee82476b2c50af2fe
+
+    <form class="col s10 offset-s1" name="deal-form" id="deal-form" method="post" action="php/trading.php">
+
       <div class="row">
         <div class="input-field col s3">
           <select name="type">
@@ -91,54 +91,56 @@
 <script src='../js/materialid.min.js'></script>
 <script>
 
-$('#deal-form').materialid({
-    fields: {
-      stockId: {
-        validators: {
-          notEmpty: {
-            msg: '股票ID不能为空'
-          },
-          regexp: {
-            pattern: /^[A-Za-z0-9]+$/,
-            msg: '股票ID不能包含特殊符号'
-          }
-        }
-      },
-      num: { 
-        validators: {
-          notEmpty: {
-            msg: '数量不能为空'
-          },
-          digits: {
-            msg: '数量必须是一个数字'
-          }
-        }
-      },
-      price: { 
-        validators: {
-          notEmpty: {
-            msg: '价格不能为空'
-          },
-          numeric: {
-            msg: '价格必须是一个数值'
-          }
-        }
-      }
-    },
-    config: {
-      callback_error: function(field,msg)
-        {
-            console.log("Error Callback fired for #"+field.attr("id")+" msg:"+msg)
-        }
-    }
-  });
+
+
+$(document).ready(function() {
+
 
 $("#myfooter").load("/html/myfooter.html")
 $("#mysidebar").load("/html/mysidebar.html")
 $("#mynavbar").load("/html/mynavbar.html")
-
-$(document).ready(function() {
-  $('select').material_select();
+$('select').material_select();
+$('#deal-form').materialid({
+      fields: {
+        stockId: {
+          validators: {
+            notEmpty: {
+              msg: '股票ID不能为空'
+            },
+            regexp: {
+              pattern: /^[A-Za-z0-9]+$/,
+              msg: '股票ID不能包含特殊符号'
+            }
+          }
+        },
+        num: {
+          validators: {
+            notEmpty: {
+              msg: '数量不能为空'
+            },
+            digits: {
+              msg: '数量必须是一个数字'
+            }
+          }
+        },
+        price: {
+          validators: {
+            notEmpty: {
+              msg: '价格不能为空'
+            },
+            numeric: {
+              msg: '价格必须是一个数值'
+            }
+          }
+        }
+      },
+      config: {
+        callback_error: function(field,msg)
+          {
+              console.log("Error Callback fired for #"+field.attr("id")+" msg:"+msg)
+          }
+      }
+    });
 });
 
 </script>

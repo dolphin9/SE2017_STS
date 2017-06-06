@@ -10,26 +10,68 @@
   <b id="mynavbar"></b>
   <b id="mysidebar"></b>
 </head>
-
-<body>
-
-
   <body>
        <div class="container">
-        
-
-       </div>
- </body>
-
-
-
-
-
+         <div class="col s12 m7">
+           <h2 class="header">登录</h2>
+            <div class="card horizontal">
+              <div class="card-image">
+                <img src="/images/signin.jpg">
+              </div>
+               <div class="card-stacked">
+                <div class="card-content">
+                  <div class="row s4">
+                   <form class="col s10 offset-s1" id="signin-form" name="signup-form" method="post" action="php/signin.php">
+                     <div class="row">
+                       <div class="input-field col s12">
+                         <input id="usrname" type="text" name="usrname" class="validate">
+                         <label for="usrname">用户名</label>
+                       </div>
+                     </div>
+                     <div class="row">
+                       <div class="input-field col s12">
+                         <input id="pwd" name="pwd" type="password" name="pwd" class="validate">
+                         <label for="pwd">密码</label>
+                       </div>
+                     </div>
+                     <button class="btn waves-effect waves-light" type="submit" name="submit">提交
+                       <i class="material-icons right">send</i>
+                     </button>
+                   </form>
+                  </div>
+               </div>
+                </div>
+                  <div class="card-action">
+                    <a href="#"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
 
   <div id="myfooter"></div>
 </body>
 <script>
+$(document).ready(function(){
 $("#myfooter").load("/html/myfooter.html")
 $("#mysidebar").load("/html/mysidebar.html")
 $("#mynavbar").load("/html/mynavbar.html")
+});
+$('#signin-form').materialid({
+  fields: {
+    usrname: {
+      validators: {
+        notEmpty: {
+          msg: '用户名不能为空'
+        }
+      }
+    },
+    pwd: {
+      validators: {
+        notEmpty: {
+          msg: '密码不能为空'
+        }
+      }
+    },
+  }
+});
 </script>

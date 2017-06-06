@@ -1,8 +1,8 @@
 <?php
 $Type = $accid = $stockid = $index = $type = $num = $sell =  $price ;
 
-$accid =  $_SESSION['usrname']);
-$index = md5(uniqid(rand(), true)); rand()
+$accid =  "abc";//$_SESSION['usrname']);
+$index = md5(uniqid(rand(), true));
 $Type =  htmlspecialchars($_POST['Type']);
 $stockid =  htmlspecialchars($_POST['stockid']);
 $type =  htmlspecialchars($_POST['type']);
@@ -59,22 +59,22 @@ while($out = socket_read($socket, 8192)) {
        echo "成功发布";
     }
     else if($out == 'accept-1'){
-      echo "该股票今日休市"；
+      echo "该股票今日休市";
     }
     else if($out == 'accept-2'){
-      echo "价格越界"
+      echo "价格越界";
     }
     else if($out == 'accept-4'){
-      echo "该时间点不允许发布此类交易指令"
+      echo "该时间点不允许发布此类交易指令";
     }
     else if($out == 'cancel-0'){
-      echo "错误的时间，只有在集合竞价期间才能取消指令"
+      echo "错误的时间，只有在集合竞价期间才能取消指令";
     }
     else if($out == 'cancel=1'){
-      echo "取消成功"
+      echo "取消成功";
     }
     else {
-      echo "未知错误"
+      echo "未知错误";
     }
 }
 

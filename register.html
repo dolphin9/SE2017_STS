@@ -7,133 +7,86 @@
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="../css/materialid.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
+  <script src="autoload.js" id="autoload" js="1,2,3" css="1"></script>
+  <b id="mysidebar"></b>
+  <b id="mynavbar"></b>
 
 </head>
 <body>
-
-  <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><b>B组的股票交易系统<b></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
-        <li><a  href="\src\register_test.html">register</a></li>
-        <li><a  href="\src\register_test.html">register</a></li>
-        <li><a  href="\src\login_test.html">login_test</a></li>
-        <li><a  href="\src\try.html">try</a></li>
-      </ul>
-
-    </div>
-  </nav>
 
 
   <!---注册表单-->
 
 <p>
   <div class="container">
-  <div class="row s4">
-    <form class="col s10 offset-s1" id="signup-form" name="signup-form" method="post" action="register.php">
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="usrname" type="text" name="usrname" class="validate">
-          <label for="usrname">用户名</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="pwd" name="pwd" type="password" name="pwd" class="validate">
-          <label for="pwd">密码</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="pwd1" name="pwd1" type="password" name="pwd1" class="validate">
-          <label for="pwd1">再次输入</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="phone" type="text" name="phone" class="validate">
-          <label for="phone">手机号</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" name="row" class="validate">
-          <label for="email">邮件</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s4">
-          <lable for="sex">性别</lable>
-        </div>
-        <div class="col s4">
-          <input name="sex" type="radio" value="female" id="test1" />
-          <label for="test1">男</label>
-        </div>
-        <div class="col s4 ">
-          <input name="sex" type="radio" value="female" id="test2" />
-          <label for="test2">女</label>
-        </div>
-        </div>
-        <div class="row ">
-          <div class="input-field col s5">
-            <input id="idnum" type="text" name="idnum" nameclass="validate">
-            <label for="idnum">身份证</label>
-          </div>
-          <div class="input-field col s6 offset-s1">
-            <input id="accountname" type="text" name="accountname" nameclass="validate">
-            <label for="accountname">证券账户</label>
-          </div>
-        </div>
-        <button class="btn waves-effect waves-light" type="submit" name="submit">提交
-          <i class="material-icons right">send</i>
-        </button>
-      </div>
-
-      </div>
-    </form>
-  </div>
-</div>
-</p>
-<footer class="page-footer blue">
-  <div class="container">
     <div class="row">
-      <div class="col l6 s12">
-        <h5 class="white-text">About B Group</h5>
-        <p class="grey-text text-lighten-4">组员名单blbl</p>
+        <div class="col s12 m5">
+          <div calss="row s6 m1">
+            <h2>用户注册<h2>
+          </div>
+          <form class="row s6 m4 offset-s1 " id="signup-form" name="signup-form" method="post" action="php/register.php">
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="usrname" type="text" name="usrname" class="validate">
+                <label for="usrname">用户名</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="pwd" name="pwd" type="password" name="pwd" class="validate">
+                <label for="pwd">密码</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s4">
+                <lable for="sex">性别</lable>
+              </div>
+              <div class="col s4">
+                <input name="sex" type="radio" value="female" id="test1" />
+                <label for="test1">男</label>
+              </div>
+              <div class="col s4 ">
+                <input name="sex" type="radio" value="female" id="test2" />
+                <label for="test2">女</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="email" name="email" type="text" name="email" class="validate">
+                <label for="email">电子邮箱</label>
+              </div>
+            </div>
+            <p>
+              <input type="checkbox" id="isread" />
+              <label for="isread">  <b id="termandprivacy"></b></label>
+            </p>
+              <button class="btn waves-effect waves-light" type="submit" name="submit">提交
+                <i class="material-icons right">send</i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+<div id="myfooter"></div>
+</body>
+
+<script src="autoload.js" id="autoload" js="1,2,3" css="1"></script>
+</html>
+<script>
 
 
-      </div>
-      <div class="col l3 s12">
-        <h5 class="white-text">Settings</h5>
-        <ul>
-          <li><a class="white-text" href="#!">这里</a></li>
-          <li><a class="white-text" href="#!">不知道</a></li>
-          <li><a class="white-text" href="#!">写</a></li>
-          <li><a class="white-text" href="#!">什么</a></li>
-        </ul>
-      </div>
-      <div class="col l3 s12">
-        <h5 class="white-text">Connect</h5>
-        <ul>
-          <li><a class="white-text" href="#!">这里</a></li>
-          <li><a class="white-text" href="#!">也</a></li>
-          <li><a class="white-text" href="#!">不知道</a></li>
-          <li><a class="white-text" href="#!">写什么</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer-copyright">
-    <div class="container">
-    Made by <a class="blue-text text-lighten-3" href="http://materializecss.com">B Group</a>
-    </div>
-  </div>
-</footer>
+$(document).ready(function(){
+$("#myfooter").load("/html/myfooter.html")
+$("#mysidebar").load("/html/mysidebar.html")
+$("#mynavbar").load("/html/mynavbar.html")
+$("#termandprivacy").load("/html/termandprivacy.html")
 
+
+
+
+});
+
+<<<<<<< HEAD
     <script src="../js/materialize.js"></script>
     <script src='../js/materialid.min.js'></script>
     <!--<script src="./app.js"></script>-->
@@ -212,4 +165,6 @@
     }
   });
 
+=======
+>>>>>>> 6fea02b1f9e346cd157bc0c179cfdfbddcb09817
 </script>

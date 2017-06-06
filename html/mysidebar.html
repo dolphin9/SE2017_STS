@@ -1,10 +1,10 @@
 <script type="text/javascript">
 $(document).ready(function(){
-$("a").click(function(){
+$("#sidebar").click(function(){
   $('.button-collapse').sideNav({
-    menuWidth: 200, // Default is 300
+    menuWidth: 300, // Default is 300
     edge: 'left', // Choose the horizontal origin
-    closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
     draggable: false // Choose whether you can drag to open on touch screens
   }
 );
@@ -13,8 +13,8 @@ $("a").click(function(){
 </script>
 
 <div class="fixed-action-btn">
-  <a href="#" data-activates="slide-out" class="btn button-collapse">
-    侧边导航示例
+  <a id="sidebar" href="#" data-activates="slide-out" class="btn-floating btn-large button-collapse">
+    <i class="large material-icons">assignment_ind</i>
   </a>
 </div>
 <ul id="slide-out" class="side-nav">
@@ -23,12 +23,19 @@ $("a").click(function(){
       <img src="images/blue.jpg">
     </div>
     <a href="#!user"><img class="circle" src="images/boy-6.png"></a>
-    <a href="#!name"><span class="white-text name">张三</span></a>
-    <a href="#!email"><span class="white-text email">jdandturk@sina.com</span></a>
-  </div></li>
-  <li><a href="#!"><i class="material-icons">cloud</i>带图标的第一链接</a></li>
-  <li><a href="#!">第二链接</a></li>
-  <li><div class="divider"></div></li>
-  <li><a class="subheader">子标题</a></li>
-  <li><a class="waves-effect" href="#!">带波纹效果的第三链接</a></li>
+    <span id= "sbhello" class="white-text name"><a href="#!name">请登录</a></span>
+    <a href="#!email"><span class="white-text email">请登录</span></a
+  </div>
+</li>
+<li>资金账户总额：</li>
+<li>持有证券总额：</li>
+  <li><a class="waves-effect" href="profile.html">个人中心</a></li>
+  <li><a class="waves-effect" href="trading.html">交易中心</a></li>
+  <li><a class="waves-effect" href="record.html">历史记录</a></li>
 </ul>
+<script>
+$(document).ready(function(){
+  document.getElementById("sbhello").innerHTML = "<a herf=" + profileurl +">" + usrname + "</a>";
+
+});
+</script>

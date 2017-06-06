@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>SE2017 B3 Stock Trading System</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="autoload.js" id="autoload" js="1,2,3" css="1"></script>
+  <b id="mysidebar"></b>
+  <b id="mynavbar"></b>
+</head>
+
+<body>
+<div class="container">
+  <h1>个人交易流水记录查询</h1>
+
+  <table class="striped" border="1">
+  <tr>
+  <td>交易ID</td>
+  <td>股票ID</td>
+  <td>日期</td>
+  <td>数量</td>
+  <td>价格</td>
+  <td>状态</td>
+  </tr>
+  <tr>
+    <td>交易IDdata1</td>
+    <td>股票IDdata1</td>
+    <td>日期data1</td>
+    <td>数量data1</td>
+    <td>价格data1</td>
+    <td>状态data1</td>
+  </tr>
+  <tr>
+    <td>交易IDdata2</td>
+    <td>股票IDdata2</td>
+    <td>日期data2</td>
+    <td>数量data2</td>
+    <td>价格data2</td>
+    <td>状态data2</td>
+  </tr>
+  </table>
+</div>
+
+
+
+
+
+  <div id="myfooter"></div>
+</body>
+<script>
+$("#myfooter").load("/html/myfooter.html")
+$("#mysidebar").load("/html/mysidebar.html")
+$("#mynavbar").load("/html/mynavbar.html")
+</script>
