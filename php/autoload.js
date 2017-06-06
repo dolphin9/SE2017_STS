@@ -51,11 +51,12 @@ autoload.include({
     //引入的路径
     ,path: [
         '../css/materialize.css'
-        ,'../css/materialize.min.css'
+        ,'../css/materialize.min.css',
+        ,'../css/materialid.min.css'
         ,'../js/jquery-3.2.1.js'
         ,'../js/init.js'
         ,'../js/materialize.js'
-        ,'../js/materialize.min.js'
+        ,'../js/materialid.min.js'
         ,'../js/vue.js'
     ]
 });
