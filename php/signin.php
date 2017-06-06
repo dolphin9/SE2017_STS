@@ -24,7 +24,7 @@ $pwd = MD5($_POST['pwd']);
 $con = connectMySQL('reader');
 mysql_select_db("stock" , $con);
 
-echo "username = $usrname"."<br>";
+//echo "username = $usrname"."<br>";
 //echo "pwd = $pwd"."<br>";
 
 //检测用户名及密码是否正确
@@ -43,12 +43,12 @@ if($result = mysql_fetch_array($check_query)){
     $_SESSION['accountname'] = $result['accountname'];
     $_SESSION['islogin'] = "true";
 
-    echo $usrname,' 欢迎你！进入 <a href="my.php">用户中心</a><br />';
-    echo '点击此处 <a href="logout.php?action=logout">注销</a> 登录！<br />';
-    header("Location: ../profile.html");
+   echo json_encode(array('result': 1, 'session': $_SESSION, 'username': $usrname));
     exit;
 } else {
-    exit('登录失败！点击此处 <a href="javascript:history.back(-1);">返回</a> 重试');
+    //header('Content-Type: application/json');
+    echo json_encode(array('result': 0));
+    exit;
 }
 
 ?>
