@@ -33,7 +33,7 @@ $sql = "SELECT usrname from normalusr where usrname='$usrname' and pwd='$pwd' li
 $check_query = mysql_query($sql);
 
 //echo "$check_query"."<br>";
-if($result = mysql_fetch_array($check_query)){
+if($check_query && $result = mysql_fetch_array($check_query)){
     //登录成功
     session_start();
     $_SESSION['username'] = $usrname;
@@ -43,11 +43,11 @@ if($result = mysql_fetch_array($check_query)){
     $_SESSION['accountname'] = $result['accountname'];
     $_SESSION['islogin'] = "true";
 
-   echo json_encode(array('result': 1, 'session': $_SESSION, 'username': $usrname));
+   echo json_encode(array('result' => 1, 'session' => $_SESSION, 'username' => $usrname));
     exit;
 } else {
     //header('Content-Type: application/json');
-    echo json_encode(array('result': 0));
+    echo json_encode(array('result' => 0));
     exit;
 }
 

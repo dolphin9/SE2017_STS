@@ -21,7 +21,7 @@
                <div class="card-stacked">
                 <div class="card-content">
                   <div class="row s4">
-                   <form class="col s10 offset-s1" id="signin-form" name="signup-form" method="post" action="php/signin.php">
+                   <form class="col s10 offset-s1" id="signin-form" name="signup-form" method="post">
                      <div class="row">
                        <div class="input-field col s12">
                          <input id="usrname" type="text" name="usrname" class="validate">
@@ -64,13 +64,24 @@ $('#submit-button').click(function() {
     { 
       submit: true,
       usrname: $('#usrname').val(),
-      pwd: $('pwd').val()
+      pwd: $('#pwd').val()
     },
     function(data, status) {
-      console.log(data);
-      console.log($.parseJSON(data));
-      console.log(status);
+      if(status != 'success') {
+        alert("连接服务器失败！");
+      } else {
+        var response = $.parseJSON(data);
+        
+        if(response.result == 1) {
+          var session = response.session;
+          var username = response.username;
 
+          $('#hello').val(username);
+          self.location = 'profile.html';
+        } else {
+          alert("登录失败！请检查用户名或密码！");
+        }
+      }
   })
 })
 
