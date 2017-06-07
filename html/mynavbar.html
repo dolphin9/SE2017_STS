@@ -16,12 +16,20 @@
   </div>
 </nav>
 <script>
-  var islogin = "<?php echo !empty(_SESSION('usrname'))?>";
-  var usrname = (islogin=="true") ? "<?php echo _SESSION['usrname']?>" : "游客";
-  var email = (islogin=="true") ? "<?php echo _SESSION['email']?>" : "未登录";
-  var profileurl = (islogin=="true") ? '<a herf="/profile.html">个人资料</a>' : '<a herf="/signin.html">登录</a>';
+  var islogin = 0;
+  var usrname =  "游客";
+  var email = "未登录";
 $(document).ready(function(){
   document.getElementById("hello").innerHTML = usrname + "你好";
   //document.getElementById("nbprofileurl").innerHTML = profileurl;
+
+  console.log("hello");
+  $.get('../php/islognin.php', function(data, status) {
+    var _data = $.parseJSON(data);
+
+    usrname = _data.username || usrname;
+    islogin = _data.result || islogin;
+    email = _data.email || email;
+  })
 });
 </script>

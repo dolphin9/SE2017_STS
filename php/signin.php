@@ -43,7 +43,7 @@ if($check_query && $result = mysql_fetch_array($check_query)){
     $_SESSION['accountname'] = $result['accountname'];
     $_SESSION['islogin'] = "true";
 
-   echo json_encode(array('result' => 1, 'session' => $_SESSION, 'username' => $usrname));
+   echo json_encode(array('result' => 1, 'username' => $usrname));
     exit;
 } else {
     //header('Content-Type: application/json');

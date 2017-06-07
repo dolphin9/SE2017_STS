@@ -74,6 +74,30 @@
   </div>
 </div>
 
+<script type="text/javascript">
+$("#myfooter").load("/html/myfooter.html")
+$("#mysidebar").load("/html/mysidebar.html")
+$("#mynavbar").load("/html/mynavbar.html")
+
+
+  $.get('php/islognin.php', function(data, status) {
+  $('#hello').ready(function() {
+    console.log(data);
+    var _data = $.parseJSON(data);
+
+    if(_data.result == 1) {
+      usrname = _data.username || usrname;
+
+      console.log($('#hello'))
+
+      $('#hello')[0].innerHTML = usrname + "你好";
+    }
+
+  })
+});
+
+</script>
+
 
 <!----->
 

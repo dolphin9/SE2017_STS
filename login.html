@@ -59,6 +59,20 @@ $("#myfooter").load("/html/myfooter.html")
 $("#mysidebar").load("/html/mysidebar.html")
 $("#mynavbar").load("/html/mynavbar.html")
 
+$.get('php/islognin.php', function(data, status) {
+  $('#hello').ready(function() {
+    console.log(data);
+    var _data = $.parseJSON(data);
+
+    if(_data.result == 1) {
+      usrname = _data.username || usrname;
+
+      $('#hello')[0].innerHTML = usrname + "你好";
+    }
+
+  })
+});
+
 $('#submit-button').click(function() {
   $.post('php/signin.php', 
     { 
@@ -67,7 +81,6 @@ $('#submit-button').click(function() {
       pwd: $('#pwd').val()
     },
     function(data, status) {
-      console.log(data);
       if(status != 'success') {
         alert("连接服务器失败！");
       } else {
