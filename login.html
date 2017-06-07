@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>SE2017 B3 Stock Trading System</title>
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/materialid.min.css">
+  <b id="mynavbar"></b>
+  <b id="mysidebar"></b>
+</head>
+  <body>
+       <div class="container">
+         <div class="col s12 m7">
+           <h2 class="header">登录</h2>
+            <div class="card horizontal">
+              <div class="card-image">
+                <img src="/images/signin.jpg">
+              </div>
+               <div class="card-stacked">
+                <div class="card-content">
+                  <div class="row s4">
+                   <form class="col s10 offset-s1" id="signin-form" name="signup-form" method="post">
+                     <div class="row">
+                       <div class="input-field col s12">
+                         <input id="usrname" type="text" name="usrname" class="validate">
+                         <label for="usrname">用户名</label>
+                       </div>
+                     </div>
+                     <div class="row">
+                       <div class="input-field col s12">
+                         <input id="pwd" name="pwd" type="password" name="pwd" class="validate">
+                         <label for="pwd">密码</label>
+                       </div>
+                     </div>
+                     <button id="submit-button" class="btn waves-effect waves-light" type="submit" name="submit">提交
+                       <i class="material-icons right">send</i>
+                     </button>
+                   </form>
+                  </div>
+               </div>
+                </div>
+                  <div class="card-action">
+                    <a href="#"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+  <div id="myfooter"></div>
+</body>
+<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+<script src="autoload.js" id="autoload" js="1,2,3" css="1"></script>
+<script src='js/materialid.min.js'></script>
+<script>
+$(document).ready(function(){
+$("#myfooter").load("/html/myfooter.html")
+$("#mysidebar").load("/html/mysidebar.html")
+$("#mynavbar").load("/html/mynavbar.html")
+
+$('#submit-button').click(function() {
+  alert(usrname+'////'+pwd);
+  $.post('php/signin.php', 
+    { 
+      submit: true,
+      usrname: $('#usrname').val(),
+      pwd: $('#pwd').val()
+    },
+    function(data, status) {
+      if(status != 'success') {
+        alert("连接服务器失败！");
+      } else {
+        var response = $.parseJSON(data);
+        
+        if(response.result == 1) {
+          var session = response.session;
+          var username = response.username;
+
+          $('#hello').val(username);
+          self.location.href = 'profile.html';
+        } else {
+          alert("登录失败！请检查用户名或密码！");
+        }
+      }
+  })
+})
+
+$('#signin-form').materialid({
+  fields: {
+    usrname: {
+      validators: {
+        notEmpty: {
+          msg: '用户名不能为空'
+        }
+      }
+    },
+    pwd: {
+      validators: {
+        notEmpty: {
+          msg: '密码不能为空'
+        }
+      }
+    },
+  },
+  config: {
+    callback_error: function(field,msg)
+    {
+      console.log("Error Callback fired for #"+field.attr("id")+" msg:"+msg)
+    }
+  }
+});
+});
+</script>

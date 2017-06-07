@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>SE2017 B3 Stock Trading System</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/materialid.min.css">
+    <b id="mysidebar"></b>
+    <b id="mynavbar"></b>
+
+  </head>
+  <body>
+
+
+  <!---注册表单-->
+
+  <p>
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m5">
+          <div calss="row s6 m1">
+            <h2>用户注册<h2>
+            </div>
+            <form class="row s6 m4 offset-s1 " id="signup-form" name="signup-form" method="post" action="php/register.php">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="usrname" type="text" name="usrname" class="validate">
+                  <label for="usrname">用户名</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="pwd" name="pwd" type="password" name="pwd" class="validate">
+                  <label for="pwd">密码</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s4">
+                  <lable for="sex">性别</lable>
+                </div>
+                <div class="col s4">
+                  <input name="sex" type="radio" value="female" id="test1" />
+                  <label for="test1">男</label>
+                </div>
+                <div class="col s4 ">
+                  <input name="sex" type="radio" value="female" id="test2" />
+                  <label for="test2">女</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="email" name="email" type="text" name="email" class="validate">
+                  <label for="email">电子邮箱</label>
+                </div>
+              </div>
+              <p>
+                <input type="checkbox" id="isread" />
+                <label for="isread">  <b id="termandprivacy"></b></label>
+              </p>
+              <button class="btn waves-effect waves-light" type="submit" name="submit">提交
+                <i class="material-icons right">send</i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div id="myfooter"></div>
+
+      <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+      <script src="autoload.js" id="autoload" js="1,2,3" css="1"></script>
+      <script src='js/materialid.min.js'></script>
+      <script>
+
+        $(document).ready(function(){
+
+          $("#myfooter").load("/html/myfooter.html")
+          $("#mysidebar").load("/html/mysidebar.html")
+          $("#mynavbar").load("/html/mynavbar.html")
+          $("#termandprivacy").load("/html/termandprivacy.html")
+
+          $('#signup-form').materialid({
+            fields: {
+              usrname: {
+                validators: {
+                  notEmpty: {
+                    msg: '用户名不能为空'
+                  }
+                }
+              },
+              pwd: {
+                validators: {
+                  notEmpty: {
+                    msg: '密码不能为空'
+                  },
+                  regexp: {
+                    pattern: /^(\w){6,20}$/,
+                    msg: '密码必须大于6位小于20位'
+                  }
+                }
+              },
+              email: {
+                validators: {
+                  notEmpty: {
+                    msg: '邮箱地址不能为空'
+                  },
+                  regexp: {
+                    pattern: /^([\w-_]+(?:\.[\w-_]+)*)@((?:[a-z0-9]+(?:-[a-zA-Z0-9]+)*)+\.[a-z]{2,6})$/i,
+                    msg: '不是有效的邮箱'
+                  }
+                }
+              },
+            },
+            config: {
+              callback_error: function(field,msg)
+              {
+                console.log("Error Callback fired for #"+field.attr("id")+" msg:"+msg)
+              }
+            }
+          });
+
+
+
+        });
+         </script>
+    </body>
+</html>
