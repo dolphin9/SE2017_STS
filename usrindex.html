@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>SE2017 B3 Stock Trading System</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="autoload.js" id="autoload" js="1,2,3" css="1"></script>
+  <b id="mysidebar"></b>
+  <b id="mynavbar"></b>
+   <script>
+    function myfunction(id,name){
+      alert('正在前往交易界面,请注意股票代码和名称\n'+id+' '+name);
+      var mystr="trading.html?"+"id="+id;
+      window.location.assign(mystr);
+    }
+  </script>
+</head>
+
+<body>
+
+
+	
+  <div id="modal1" class="modal">  
+    <div class="modal-content">
+      <h4>aaaaaaa</h4>
+      <p>aaaaaaaaaaa</p>
+    </div>
+  <div class="modal-footer">
+    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>
+
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">个人信息</span> 
+			  <div class="row">
+    <div class="input-field col s6">
+      <input value="test" id="first_name2" type="text" class="validate">
+      <label class="active" for="first_name2">Name</label>
+    </div>
+	<div class="input-field col s6">
+      <input value="1234567890" id="first_name2" type="text" class="validate">
+      <label class="active" for="first_name2">Tel</label>
+    </div>
+	<div class="input-field col s6">
+      <input value="10000" id="first_name2" type="text" class="validate">
+      <label class="active" for="first_name2">资金总额</label>
+    </div>
+	<div class="input-field col s6">
+      <input value="10000" id="first_name2" type="text" class="validate">
+      <label class="active" for="first_name2">股票总额</label>
+    </div>
+  </div>
+            </div>
+		<a class ="waves-effect waves-light btn" href="profile1.html" font color="white">修改个人信息</a>
+    <a class ="waves-effect waves-light btn" href="index.html" font color="white">注销个人账户</a>    
+		</div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">持有股信息</span>
+              <table>
+                
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="row">
+      <div class="col s12 ">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">股票信息</span>
+          </div>
+          <div>
+             <table class="striped">
+                   <thead>
+                     <tr>
+                         <th data-field="id">代码</th>
+                         <th data-field="name">名称</th>
+                         <th data-field="price">涨跌额</th>
+                         <th data-field="price">涨跌幅</th>
+                         <th data-field="price">现价</th>
+                         <th data-field="price">今日成交</th>
+                         <th data-field="price">换手</th>
+                         <th data-field="price">流通</th>
+                         <th data-field="price">买价</th>
+                         <th data-field="price">卖价</th>
+                         <th data-field="price">最高</th>
+                         <th data-field="price">最低</th>
+                         <th data-field="price">交易</th>
+                     </tr>
+                   </thead>
+
+                   <tbody>
+                     <tr>
+                       <td>000001</td>
+                       <td>平安银行</td>
+                       <td>5.43</td>
+                       <td>0.69</td>
+                       <td>13.39↑</td>
+                       <td>0</td>
+                       <td>-</td>
+                       <td>40236393</td>
+                       <td>-</td>
+                       <td>-</td>
+                       <td>13.47</td>
+                       <td>12.63</td>
+                       <td>
+                            <button class="waves-effect waves-light btn" onclick="myfunction('000001','平安银行')">交易</button> 
+                      </td>
+                       </tr>
+                     <tr>
+                       <td>600001</td>
+                       <td>中国石油</td>
+                       <td>2.10</td>
+                       <td>10.00%</td>
+                       <td>23.10↑</td>
+                       <td>100</td>
+                       <td>-</td>
+                       <td>98556393</td>
+                       <td>-</td>
+                       <td>-</td>
+                       <td>23.10</td>
+                       <td>22.58</td>
+                       <td>
+                           <button class="waves-effect waves-light btn" onclick="myfunction('600001','中国石油')">交易</button> 
+                      </td>
+                     </tr>
+                   </tbody>
+                 </table>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  
+	
+
+
+
+
+
+  <div id="myfooter"></div>
+</body>
+
+<script>
+      $(document).ready(function()
+      {
+      $("#myfooter").load("/html/myfooter.html")
+      $("#mysidebar").load("/html/mysidebar.html")
+      $("#mynavbar").load("/html/mynavbar.php")
+
+      });
+
+
+
+</script>
+
+
+
+

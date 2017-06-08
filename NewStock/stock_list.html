@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <title>证券交易管理系统</title>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/theme.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/premium.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/elements.css">
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+
+    <script src="lib/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="lib/jquery.cookie.js" type="text/javascript"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+
+    <script src="javascript/login_check.js" type="text/javascript"></script>
+    <script src="javascript/stock_list.js" type="text/javascript"></script>
+    <script src="javascript/logout.js" type="text/javascript"></script>
+</head>
+
+<body class=" theme-blue">
+<script type="text/javascript">
+    $(function() {
+        var match = document.cookie.match(new RegExp('color=([^;]+)'));
+        if(match) var color = match[1];
+        if(color) {
+            $('body').removeClass(function (index, css) {
+                return (css.match (/\btheme-\S+/g) || []).join(' ')
+            })
+            $('body').addClass('theme-' + color);
+        }
+
+        $('[data-popover="true"]').popover({html: true});
+
+    });
+</script>
+
+<script type="text/javascript">
+    $(function() {
+        var uls = $('.sidebar-nav > ul > *').clone();
+        uls.addClass('visible-xs');
+        $('#main-menu').append(uls.clone());
+    });
+</script>
+
+<script type="text/javascript">
+    $("[rel=tooltip]").tooltip();
+    $(function() {
+        $('.demo-cancel-click').click(function(){return false;});
+    });
+</script>
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!--[if lt IE 7 ]> <body class="ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <body class="ie ie7 "> <![endif]-->
+<!--[if IE 8 ]> <body class="ie ie8 "> <![endif]-->
+<!--[if IE 9 ]> <body class="ie ie9 "> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+
+<!--<![endif]-->
+
+<!--头部信息-->
+<div class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <a class=""><span class="navbar-brand"><span class="fa fa-paper-plane"></span> 证券交易管理系统</span></a>
+    </div>
+
+    <div class="navbar-collapse collapse" style="height: 1px;">
+        <ul id="main-menu" class="nav navbar-nav navbar-right">
+            <li class="dropdown hidden-xs">
+                <a class="paging" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="glyphicon glyphicon-user padding-right-small" style="position:relative;top: 3px;"></span>
+                    <span id="user"></span>
+                    <i class="fa fa-caret-down"></i>
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li><a id="logout" tabindex="-1" href="">退出</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--侧边栏-->
+<div class="sidebar-nav">
+    <ul>
+        <li class="paging"><a data-target=".dashboard-menu" class="nav-header" data-toggle="collapse"><i class="fa fa-fw fa-dashboard"></i> 股票管理<i class="fa fa-collapse"></i></a></li>
+        <li><ul class="dashboard-menu nav nav-list collapse in">
+            <li class="active"><a href="stock_list.html"><span class="fa fa-caret-right"></span> 股票列表</a></li>
+            <li ><a href="stock_add.html"><span class="fa fa-caret-right"></span> 添加股票</a></li>
+            <li ><a href="announcement.html"><span class="fa fa-caret-right"></span> 发布信息</a></li>
+        </ul></li>
+
+        <li class="paging"><a data-target=".accounts-menu" class="nav-header collapsed" data-toggle="collapse"><i class="fa fa-fw fa-briefcase"></i> 账户管理<i class="fa fa-collapse"></i></a></li>
+        <li><ul class="accounts-menu nav nav-list collapse">
+            <li ><a href="account_list.html"><span class="fa fa-caret-right"></span> 账户列表</a></li>
+            <li ><a href="account_add.html"><span class="fa fa-caret-right"></span> 账户注册</a></li>
+        </ul></li>
+    </ul>
+</div>
+
+<!--主要信息-->
+<div class="content">
+    <!--标题目录-->
+    <div class="header">
+        <h1 class="page-title">股票列表</h1>
+        <ul class="breadcrumb">
+            <li class="active">股票管理</li>
+            <li class="active">股票列表</li>
+        </ul>
+    </div>
+
+    <!--搜索列表-->
+    <div class="main-content">
+
+        <!--搜索栏-->
+        <div class="row">
+            <!--输入框-->
+            <div id="search_input" class="col-md-4">
+                <div class="col-md-11">
+                    <input type="text" placeholder="" class="form-control" id = "input_text">
+                </div>
+            </div>
+            <!--下拉菜单-->
+            <div class="col-md-2">
+                <select id="attr" class="form-control">
+                    <option value="stockid">股票代码</option>
+                    <option value="name">股票名称</option>
+                    <option value="apid">法人ID</option>
+                    <option value="date">发行时间</option>
+                    <option value="circulation">发行量</option>
+                    <option value="inipri">初始价</option>
+                    <option value="strpri">成交价</option>
+                    <option value="buypri">买入价</option>
+                    <option value="sellpri">卖出价</option>
+                    <option value="curmaxpri">当日最高价格</option>
+                    <option value="curminpri">当日最低价格</option>
+                    <option value="openingpri">开盘价</option>
+                    <option value="closingpri">收盘价</option>
+                    <option value="totalstoke">总手</option>
+                    <option value="curstoke">现手</option>
+                </select>
+            </div>
+            <button class="btn btn-primary" id="search"> 搜索</button>
+        </div>
+        <br/>
+        <!--结果列表-->
+        <table class="table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th class="item" id="stockid">股票代码</th>
+                <th class="item" id="name">股票名称</th>
+                <th class="item" id="circulation">发行量</th>
+                <th class="item" id="apid">法人ID</th>
+                <th class="item" id="date">发布时间</th>
+                <th class="item" id="inipri">初始价</th>
+                <th style="width: 3.5em;"></th>
+            </tr>
+            </thead>
+
+            <tbody id="result_list">
+            </tbody>
+
+        </table>
+
+        <!--分页目录-->
+        <ul class="pagination" id="page">
+        </ul>
+
+        <!--删除弹窗-->
+        <div class="modal small fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h3 id="myModalLabel">密码确认</h3>
+                    </div>
+                    <div class="modal-body">
+                        <p class="error-text"><i class="fa fa-warning modal-icon"></i>请输入密码<br/></p>
+                        <input type="password" placeholder="" id="pwd" class="form-control">
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">取消</button>
+                        <button class="btn btn-danger" data-dismiss="modal" id = "delete_button">确认</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--底部信息-->
+        <footer>
+            <hr>
+            <p class="pull-right">A <a href="http://www.portnine.com/bootstrap-themes" target="_blank">Free Bootstrap Theme</a> by <a href="http://www.portnine.com" target="_blank">Portnine</a></p>
+            <p>© 2017 <a target="_blank">B1组</a></p>
+        </footer>
+    </div>
+</div>
+
+</body></html>

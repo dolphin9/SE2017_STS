@@ -1,0 +1,27 @@
+
+<nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" class="brand-logo">
+        <b>B组股票交易系统<b>
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <!--<li><a href="#">Navbar Link</a></li>
+        <li><a  href="\phpmyadmin\">mysql</a></li>-->
+      </ul>
+    </div>
+    <div>
+
+  </div>
+</nav>
+
+<script>
+  var islogin = "<?php echo !empty(_SESSION('username'))?>";  
+  var usrname = (islogin=="true") ? "<?php echo _SESSION['usrname']?>" : "游客";
+  var email = (islogin=="true") ? "<?php echo _SESSION['email']?>" : "未登录";
+  var profileurl = (islogin=="true") ? '<a herf="/profile.html">个人资料</a>' : '<a herf="/signin.html">登录</a>';
+$(document).ready(function()
+{
+  document.getElementById("hello").innerHTML = usrname + "你好";
+  //document.getElementById("nbprofileurl").innerHTML = profileurl;
+});
+</script>

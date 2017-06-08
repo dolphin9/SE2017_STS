@@ -1,0 +1,28 @@
+.navbar-default .navbar-brand, .navbar-default .navbar-brand:hover {
+    color: #fff;
+}
+
+.error{
+    color: #b92c28;
+}
+*{
+    transition: .1s linear;
+    transition-property:background-color;
+}
+.result_row:hover{
+    background-color: lightgray;
+    cursor:pointer;
+}
+
+.item:hover{
+    background-color: darkgray;
+    cursor:pointer;
+}
+
+.paging:hover{
+    cursor:pointer;
+}
+
+.needed{
+    color: #b90000;
+}

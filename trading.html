@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>SE2017 B3 Stock Trading System</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="../css/materialid.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
+  <script src="autoload.js" id="autoload" js="1,2,3" css="1"></script>
+
+  <b id="mynavbar"></b>
+  <b id="mysidebar"></b>
+  <script type="text/javascript">
+    function getinfo(){
+        var url=location.href;
+        var tmp=url.split('?')[1];
+        var id=tmp.split('=')[1];
+        document.getElementById("stockId").value=id;
+    }
+
+  </script>
+</head>
+
+<body>
+
+ <div class="container">
+  <div class="row s4">
+
+    <form class="col s10 offset-s1" name="signup-form" method="post" action="php/trading.php">
+        <h1>股票交易</h1>
+
+    <form class="col s10 offset-s1" name="deal-form" id="deal-form" method="post" action="php/trading.php">
+
+      <div class="row">
+        <div class="input-field col s3">
+          <select name="type">
+            <option value="accept">发布</option>
+            <option value="cancel">撤消</option>
+          </select>
+          <label>操作类型</label>
+        </div>
+        <div class="input-field col s4 offset-s1">
+          <select name="type2">
+            <option value="0">限价指令</option>
+            <option value="1">最优五档剩余撤销</option>
+            <option value="2">最优五档剩余限价</option>
+          </select>
+          <label>指令类型</label>
+        </div>
+        <div class="input-field col s3 offset-s1">
+          <select name="sell">
+            <option value="0">买</option>
+            <option value="1">卖</option>
+          </select>
+          <label>买卖类型</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <body onload="getinfo()">
+          <input name="stockId" id="stockId" type="text">
+          <label for="stockId">股票 ID</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+		
+          <input name="num" id="num" type="text">
+          <label for="num">交易数量</label>
+        </div>
+      </div>
+        <div class="row ">
+          <div class="input-field col s12">
+          <input name="price" id="price" type="text">
+          <label for="price">价格</label>
+        </div>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">提交
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+
+  <div id="myfooter"></div>
+</body>
+<script src="../js/materialize.js"></script>
+<script src='../js/materialid.min.js'></script>
+<script>
+
+
+
+$(document).ready(function() {
+
+
+$("#myfooter").load("/html/myfooter.html")
+$("#mysidebar").load("/html/mysidebar.html")
+$("#mynavbar").load("/html/mynavbar.html")
+$('select').material_select();
+$('#deal-form').materialid({
+      fields: {
+        stockId: {
+          validators: {
+            notEmpty: {
+              msg: '股票ID不能为空'
+            },
+            regexp: {
+              pattern: /^[A-Za-z0-9]+$/,
+              msg: '股票ID不能包含特殊符号'
+            }
+          }
+        },
+        num: {
+          validators: {
+            notEmpty: {
+              msg: '数量不能为空'
+            },
+            digits: {
+              msg: '数量必须是一个数字'
+            }
+          }
+        },
+        price: {
+          validators: {
+            notEmpty: {
+              msg: '价格不能为空'
+            },
+            numeric: {
+              msg: '价格必须是一个数值'
+            }
+          }
+        }
+      },
+      config: {
+        callback_error: function(field,msg)
+          {
+              console.log("Error Callback fired for #"+field.attr("id")+" msg:"+msg)
+          }
+      }
+    });
+});
+
+</script>
+</html>
